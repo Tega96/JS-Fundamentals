@@ -1,11 +1,19 @@
+/**
+ * Write a script that prints a message depending on the number of Arguments passed:
+ * If no arguments are passed to the script, print "No argument"
+ * If only one argument is passed to the script, print "Argument found"
+ * Otherwise, print "Arguments found"
+ */
+
+
 const { argv } = require('node:process');
 
-argv.find((val, index) => {
-    if (!val) {
-        console.log("No argument")
-    } else if (val.length === index) {
-        console.log("Argument found")
-    } else {
-        console.log("Arguments found")
-    }
-})
+const arg = process.argv.slice(2);
+
+if (arg.length === 0) {
+    console.log("No argument")
+} else if (arg.length === 1) {
+    console.log("Argument found")
+} else {
+    console.log("Arguments found")
+}
