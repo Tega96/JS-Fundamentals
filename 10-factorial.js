@@ -6,13 +6,27 @@
  * You must do it recursively
  */
 
-const [,,args] = process.argv;
-const factNum = parseInt(args);
-function factorial(num) {
-    if (num === factNum) {
-        break;
-    } else {
+// const [,,args] = process.argv;
+// const factNum = parseInt(args);
+// function factorial(num) {
+//     if (num === factNum) {
+//         break;
+//     } else {
         
+//     }
+// }
+// factorial(factNum)
+
+const n = process.argv[2]
+
+function factorial(n) {
+    if (isNaN(n)) {
+        return 1
     }
+
+    if (parseInt(n) <= 1) {
+        return 1;
+    }
+    return parseInt(n) * factorial(parseInt(n) -1)
 }
-factorial(factNum)
+console.log(factorial(n))
