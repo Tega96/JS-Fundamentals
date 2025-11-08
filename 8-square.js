@@ -6,14 +6,19 @@
  * You must use the character x to print the square
  */
 
-let i = 0;
-while (i < 2 ) {
-    // let j = 0
-    // while (j < 5) {
-    //     console.log('J')
-    //     j++;
-    // }
-    console.log('X');
-    i++;
+// Get value from cli
+const size = process.argv[2]
+
+// Check if number is it is a number
+if (size !== undefined && !isNaN(parseInt(size))) {
+    for (let i = 0; i < size; i++) {
+        let row = '';
+        for (let j = 0; j < size; j++) {
+            row = row + 'X'
+        }
+        console.log(row)
+    }
+} else {
+    console.log('Missing size')
 }
-console.log(process)
+
